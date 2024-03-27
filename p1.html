@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            border: none;
+            outline: none;
+            background-color: black;
+            color: white;
+            padding: 10px;
+            border: 1px solid #000;
+            border-radius: 50px;
+            font-size: 2rem;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Maximum subarray Sum with No adjacent elements</h1>
+    </center>
+    <button onclick="subArray()">click</button>
+    <script>
+       
+      
+       
+        function subArray(){
+            let array = [2,1,5,8,4]
+        if(array.length === 0){
+            document.write(`<h1>${0}</h1>`)
+            return 0
+        }
+        if(array.length == 1){
+            document.write(`<h1>${array[0]}</h1>`)
+            return array[0]
+        }
+        let inc = array[0] //2
+        let exc = 0 //0
+        for(let i=1; i<array.length; i++){
+           let newinclude = exc + array[i];
+           exc = Math.max(exc, inc)
+           inc = newinclude;
+        }
+        document.write(`<h1>${Math.max(exc,inc)}</h1>`)
+        return Math.max(exc,inc)
+       
+       }
+      
+       
+      
+    </script>
+</body>
+</html>

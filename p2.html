@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+              font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    
+        p{
+            font-size: 2.5rem;
+          color: rgb(55, 43, 226);
+
+        }
+        h1{
+            font-size: 1.2rem;
+            line-height: 2;
+        
+        }
+        span{
+            color: red;
+        }
+       
+    </style>
+</head>
+<body>
+    <center>
+        <div class="card">
+            <p>Stock Buy and sell</p>
+       <h1 id="result"></h1>
+    </div>
+    </center>
+    <script>
+        let result = document.getElementById('result')
+        let array = [7,1,5,3,6,4];
+        let min = array[0]
+        let index = 0;
+        for(let i=1; i<array.length; i++){
+            if(array[i] < min){
+                min = array[i]
+                index = i;
+            }
+        }
+        
+        
+        
+        let max = array[index]
+        for(let j=index+1; j<array.length; j++){
+            if(array[j] > max){
+                max = array[j]
+            }
+        }
+        result.innerHTML += `<h2>The minimum value is = <span>${min}</span></h2>`
+        result.innerHTML += `<h2>The maximum value is = <span>${max}</span></h2>`
+        result.innerHTML += `<h2>The maximum profit is = <span> ${max-min}</span></h2>`
+
+        
+       // document.write(`The maximum profit is ${max-min}<br>`)
+
+        
+
+        console.log(min)
+        console.log(max)
+        console.log(max-min)
+    </script>
+</body>
+</html>
